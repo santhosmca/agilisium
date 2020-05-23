@@ -1,0 +1,40 @@
+{
+  "walleTracker": [
+    {
+      "id": 1,
+      "date": "2020-05-09",
+      "description": "Swiggy",
+      "paymentMode": "Credit",
+      "cost": "500"
+    },
+    {
+      "id": 2,
+      "date": "2020-05-16",
+      "description": "Paytm Cash back",
+      "paymentMode": "debit",
+      "cost": "100"
+    },
+    {
+      "id": 3,
+      "date": "2020-05-31",
+      "description": "Film",
+      "paymentMode": "debit",
+      "cost": "1000"
+    },
+    {
+      "id": 4,
+      "date": "2020-05-12",
+      "description": "Car expenses",
+      "paymentMode": "debit",
+      "cost": "200"
+    },
+    {
+      "id": 5,
+      "date": "2020-05-24",
+      "description": "cashback",
+      "paymentMode": "debit",
+      "cost": "12",
+      "createdAt": 1590230351720
+    }
+  ]
+}
