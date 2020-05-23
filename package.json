@@ -1,0 +1,20 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "Crud Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Santhosh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "json-server": "^0.16.1",
+    "mysql": "^2.16.0",
+    "node-json-db": "^1.1.0",
+    "simple-json-db": "^1.2.2"
+  }
+}
