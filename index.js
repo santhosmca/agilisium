@@ -1,28 +1,12 @@
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
- 
+//Loads the express module
+const express = require('express');
+//Creates our express server
+const app = express();
+const port = 3000;
+//Serves static files (we need it to import a css file)
+app.use(express.static('public'))
+//Sets a basic route
+app.get('/', (req, res) => res.send('Hello World !'));
 
-server.use(middlewares)
- 
-// Add custom routes before JSON Server router
-server.get('/echo', (req, res) => {
-  res.jsonp(req.query)
-})
-
-server.use(jsonServer.bodyParser)
-server.use((req, res, next) => {
-  if (req.method === 'POST') {
-    req.body.createdAt = Date.now()
-  }
-  // Continue to JSON Server router
-  next()
-})
- 
-// Use default router
-server.use(router)
-
-server.listen(3000, () => {
-  console.log('JSON Server is running')
-})
+//Makes the app listen to port 3000
+app.listen(port, () => console.log(`App listening to port ${port}`));
