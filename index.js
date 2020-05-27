@@ -1,12 +1,28 @@
-//Loads the express module
-const express = require('express');
-//Creates our express server
-const app = express();
-const port = 3000;
-//Serves static files (we need it to import a css file)
-app.use(express.static('public'))
-//Sets a basic route
-app.get('/', (req, res) => res.send('Hello World !'));
+var express = require('express');
+var exphbs  = require('express-handlebars');
 
-//Makes the app listen to port 3000
-app.listen(port, () => console.log(`App listening to port ${port}`));
+var app = express();
+
+var hbs = exphbs.create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+        foo: function () { return 'FOO!'; },
+        bar: function () { return 'BAR!'; }
+    }
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.get('/', function (req, res, next) {
+    res.render('home', {
+        showTitle: true,
+
+        // Override `foo` helper only for this rendering.
+        helpers: {
+            foo: function () { return 'foo.'; }
+        }
+    });
+});
+
+app.listen(3000);
